@@ -1,0 +1,20 @@
+// The order of imports in this file is important
+
+// Import project styles
+@import "./theme";
+
+// Import custom values
+@import "./customValues";
+
+// Import Bootstrap defaults
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// Import custom utilities
+@import "./customUtilities";
+
+// import bootstrap to set changes
+@import "~bootstrap/scss/bootstrap";

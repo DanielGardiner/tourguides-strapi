@@ -1,0 +1,55 @@
+import { cmsToken, endpoints, userRoles } from "@/constants";
+import Cookies from "cookies";
+
+const urlTours = endpoints.cms.tours;
+const urlCurrentUser = endpoints.cms.currentUser;
+
+export default async function handler(req, res) {
+  try {
+    // Get all users from CMS
+    const toursResponse = await fetch(urlTours, {
+      headers: {
+        Authorization: `Bearer ${cmsToken}`,
+      },
+    });
+    const tours = await toursResponse.json();
+
+    // Get JWT from cookie
+    const cookies = new Cookies(req);
+    const jwt = cookies.get("jwt");
+
+    // Get user role from CMS using JWT
+    const currentUserResponse = await fetch(urlCurrentUser, {
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+      },
+    });
+    const currentUserResult = await currentUserResponse.json();
+
+    const currentUserRole = currentUserResult?.role?.name;
+
+    // If user does not have the AUTHENTICATED role, then only return tour steps that are free
+    if (currentUserRole !== userRoles.AUTHENTICATED) {
+      tours.data = tours.data.map((tour) => {
+        tour.attributes.tourStep = tour.attributes.tourStep.filter(
+          (tourStep) => tourStep.isFree
+        );
+        return tour;
+      });
+    }
+
+    res.status(200).json(tours);
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+function handleError(error) {
+  console.log(error);
+
+  // if(error instanceof ValidationError) {
+  //   return res.status(400).json({ message: error.message });
+  // }
+
+  return res.status(500).json({ message: "Unknown error" });
+}

@@ -1,0 +1,52 @@
+// $primary: #900001;
+// $secondary:     $gray-600;
+// $success:       $green;
+// $info:          $cyan;
+// $warning:       $yellow;
+// $danger:        $red;
+// $light:         $gray-100;
+// $dark: #111;
+// $link-color: $dark;
+
+h1 {
+  // color: $primary;
+}
+
+h4 {
+  // color: $dark;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+.reactMarkdown {
+  a {
+    // color: $primary;
+  }
+}
+
+.timeline-point {
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #d2d2d2;
+    top: 1px;
+    left: -16px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+}
+
+.timeline-line {
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #d2d2d2;
+    top: 1px;
+    left: 14px;
+    width: 2px;
+    height: 100%;
+  }
+}

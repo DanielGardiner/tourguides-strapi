@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_tour_step_tour_steps",
+  "info": {
+    "displayName": "tourStep"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "audio": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "isFree": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

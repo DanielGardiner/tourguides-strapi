@@ -1,0 +1,74 @@
+// Define percentage values
+$percentages: (
+  0: 0%,
+);
+@for $i from 1 through 100 {
+  $percentages: map-merge(
+    $percentages,
+    (
+      $i: #{$i}#{"%"},
+    )
+  );
+}
+
+// Define px values
+$pxs: (
+  0px: 0px,
+);
+@for $i from 1 through 2000 {
+  $pxs: map-merge($pxs, (#{$i}#{"px"}: #{$i}#{"px"}));
+}
+
+// Define z-index values
+$z-values: (
+  0: 0,
+);
+@for $i from 1 through 1000 {
+  $z-values: map-merge(
+    $z-values,
+    (
+      $i: (
+        $i,
+      ),
+    )
+  );
+}
+
+// Define opacity values
+$opacity-values: (
+  0: 0,
+);
+@for $i from 1 through 100 {
+  $opacity-values: map-merge(
+    $opacity-values,
+    (
+      $i: (
+        $i/10,
+      ),
+    )
+  );
+}
+
+// Define spacers
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+@for $i from 6 through 100 {
+  $spacers: map-merge(
+    $spacers,
+    (
+      $i: (
+        ($i + 1)/2 * $spacer,
+      ),
+    )
+  );
+}
+
+// Define position values
+$position-values: map-merge($percentages, $pxs);

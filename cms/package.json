@@ -1,0 +1,35 @@
+{
+  "name": "cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "generate-admin-patches": "npx patch-package @strapi/admin",
+    "apply-admin-patches": "npx patch-package",
+    "admin-watch": "npx strapi develop --watch-admin"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/admin": "4.5.6",
+    "@strapi/plugin-i18n": "4.5.6",
+    "@strapi/plugin-users-permissions": "4.5.6",
+    "@strapi/strapi": "4.5.6",
+    "mysql": "2.18.1",
+    "patch-package": "^6.5.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "1ca9ed77-fc1b-48d6-af52-16f94acba38d"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.2",
+    "bootstrap": "^5.2.3",
+    "cookies": "^0.8.0",
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.2",
+    "next": "13.1.2",
+    "node-sass": "^7.0.0",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.5",
+    "react-query": "^3.39.2",
+    "sass": "^1.57.1"
+  }
+}
