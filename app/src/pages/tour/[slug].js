@@ -100,6 +100,8 @@ function TourDescription({ description }) {
     setShowFullDescription(true);
   };
 
+  if (!description) return null;
+
   const originalDescription = description;
   const limitedDescription = limitDescriptionLength(description);
 

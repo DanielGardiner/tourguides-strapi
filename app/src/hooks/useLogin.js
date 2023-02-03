@@ -29,6 +29,7 @@ export default function useLogin() {
     ({ identifier, password }) => login({ identifier, password }),
     {
       onSuccess: async () => {
+        queryClient.invalidateQueries(["tours"]);
         await queryClient.invalidateQueries(["user"]);
         router.push("/");
       },
